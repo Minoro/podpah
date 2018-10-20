@@ -12,38 +12,28 @@
 				<pause-icon></pause-icon>
 			</span>
 		</div>
-		<!-- <div class="player__duration">
-			<span class="player__duration-text">{{ currentTime }}</span>
-			<span class="player__duration-bar">
-				<span class="player__duration-current"></span>
-			</span>
-			<span class="player__duration-text">{{ duration }}</span>
-		</div> -->
+	
+		<seekbar 
+			:duration="duration" 
+			:currentTime="currentTime" 
+			@seeking="pause"
+			@sought="moveToTime">	
+		</seekbar>
 
-		<div class="seek-bar">
-			<span class="seek-bar__time">{{ currentTime }}</span>
-			<input 
-				type="range" 
-				class="seek-bar__input"
-				min="0"
-				:max="totalTime"
-				:value="seek"
-				@mousedown="seekPosition"
-				@change="moveToPosition">
-			<span class="seek-bar__time">{{ duration }}</span>
-		</div>
 	</div>
 </template>
 
 <script>
 
 import AudioPlayer from '../../utils/audio/AudioPlayer.js';
+import SeekBar from './SeekBar';
 import Play from '../Icons/Play';
 import Pause from '../Icons/Pause';
 export default {
 	components: {
 		'play-icon': Play,
-		'pause-icon': Pause
+		'pause-icon': Pause,
+		'seekbar': SeekBar,
 	},
 	data() {
 		return {
@@ -58,9 +48,6 @@ export default {
 		player: {
 			handler(value) {
 				this.isReady = value != null && value.isReady();
-				if(this.isReady){
-					this.seek = this.player.getCurrentTime();
-				}
 			},
 			deep: true
 		},
@@ -78,20 +65,17 @@ export default {
 	computed: {
 		duration() {
 			if(!this.isReady){
-				return '0:00'
+				return 0
 			}
 
-			return this.secondsToMinutes(this.player.getDuration());
-			// return this.player.getDuration();
+			return this.player.getDuration();
 		},
 		currentTime(){
 			if(!this.isReady){
-				return '0:00'
+				return 0
 			}
 
-			let seconds = this.player.getCurrentTime(); 
-			return this.secondsToMinutes(seconds);
-
+			return this.player.getCurrentTime();
 		}
 	},
 	methods: {
@@ -119,11 +103,15 @@ export default {
 			return minutes + ':' + seconds;
 		},
 		seekPosition(){
-			this.pause();
+			if(this.isPlaying){
+				this.player.pause();
+			}
 		},
-		moveToPosition(event){
-			this.player.seek(event.target.value);
-			this.play();
+		moveToTime(time){
+			this.player.seek(time);
+			if(!this.isPlaying){
+				this.play();
+			}
 		}
 
 	}
@@ -153,95 +141,5 @@ export default {
 	transform: translateY(-50%);
 	transition: left 1s ease;
 }
-
-
-.seek-bar {
-	display: flex;
-
-	&__input {
-		&[type=range] {
-			-webkit-appearance: none;
-			margin: 0 .5rem;
-			width: 100%;
-
-			&:focus {
-				outline: none;
-
-				&::-webkit-slider-runnable-track {
-					background: #333;
-				}
-			}
-
-			//linha de busca
-			&::-moz-range-track {
-				width: 100%;
-				height: 1px;
-				background-color: #333;
-			}
-			
-			//bolinha de busca
-			&::-moz-range-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
-				border-radius: 50%;
-				border-color: transparent;
-				cursor: pointer;
-			}
-
-			//Chrome
-			&::-webkit-slider-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
-				border-radius: 50%;
-				border-color: transparent;
-				cursor: pointer;
-				cursor: pointer;
-				-webkit-appearance: none;
-			}
-
-			&::-webkit-slider-runnable-track {
-				cursor: pointer;
-				animate: 0.2s;
-				position: relative;
-				width: 100%;
-				height: 1px;
-				background-color: #333;
-			}
-
-			//IE
-			&::-ms-fill-lower {
-				width: 100%;
-				height: 1px;
-				background-color: #333;
-			}
-
-			&::-ms-fill-upper {
-				width: 100%;
-				height: 1px;
-				background-color: #333;
-			}
-
-			&::-ms-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
-				border-radius: 50%;
-				cursor: pointer;
-			}
-
-			&::-ms-track {
-				cursor: pointer;
-				animate: 0.2s;
-				position: relative;
-				width: 100%;
-				height: 1px;
-				background-color: #333;
-			}
-		}
-	}
-}
-
 
 </style>
