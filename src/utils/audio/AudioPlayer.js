@@ -64,4 +64,8 @@ export default class AudioPlayer {
 		this._audio.currentTime = time; 
 	}
 
+	setVolume(volume){
+		this._audio.volume = parseFloat(volume);
+	}
+
 }

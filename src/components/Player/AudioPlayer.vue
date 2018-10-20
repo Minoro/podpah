@@ -20,6 +20,9 @@
 			@sought="moveToTime">	
 		</seekbar>
 
+
+		<volume @change="onVolumeChange"></volume>
+
 	</div>
 </template>
 
@@ -27,6 +30,7 @@
 
 import AudioPlayer from '../../utils/audio/AudioPlayer.js';
 import SeekBar from './SeekBar';
+import Volume from './Volume';
 import Play from '../Icons/Play';
 import Pause from '../Icons/Pause';
 export default {
@@ -34,6 +38,7 @@ export default {
 		'play-icon': Play,
 		'pause-icon': Pause,
 		'seekbar': SeekBar,
+		'volume': Volume
 	},
 	data() {
 		return {
@@ -42,6 +47,7 @@ export default {
 			isReady: false,
 			totalTime: 0,
 			seek: 0,
+			volume: 100,
 		}
 	},
 	watch: {
@@ -112,6 +118,9 @@ export default {
 			if(!this.isPlaying){
 				this.play();
 			}
+		},
+		onVolumeChange(volume){
+			this.player.setVolume(volume);
 		}
 
 	}
