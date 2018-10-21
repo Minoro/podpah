@@ -1,0 +1,35 @@
+.header {
+    margin: 0;
+    height: 5.6rem;
+    padding: 0 1.5rem 0 2rem;
+    background-color: $primary-color;
+    color: #ffffff;
+
+    > * {
+        display: inline-block;
+        position: relative;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: .02em;
+        font-weight: 400;
+        box-sizing: border-box;
+        padding-top: 1.5rem;
+        height: 100%;
+        margin-right: 2rem;
+    }
+
+    &__logo {
+        border-right: 1px solid #fff;
+        padding-right: 2rem;
+    }
+
+    &__link {
+        color: #ffff;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary-light;
+        }
+    }
+
+}
