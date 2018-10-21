@@ -80,11 +80,11 @@ export default {
 				outline: none;
 				
 				&::-webkit-slider-runnable-track {
-					background: #666;
+					background: $primary-light;
 				}
 
 				&::-moz-range-track {
-					box-shadow: 0px 2px 7px -1px #333;
+					box-shadow: 0px 2px 7px -1px $primary-color;
 				}
 			}
 
@@ -92,16 +92,16 @@ export default {
 			&::-moz-range-track {
 				width: 100%;
 				height: .4rem;
-				border: 1px solid #666;
+				border: 1px solid $primary-light;
 				border-radius: .23rem;
-				background-color: #666;
+				background-color: $primary-light;
 			}
 			
 			//bolinha de busca
 			&::-moz-range-thumb {
 				width: .8rem;
 				height: .8rem;
-				background: #333;
+				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
 				cursor: pointer;
@@ -110,7 +110,7 @@ export default {
 			//abaixo do picker
 			&::-moz-range-progress {
 				height: 100%;
-				background-color: #666;
+				background-color: $primary-light;
 			}
 
 			//acima do picker
@@ -123,7 +123,7 @@ export default {
 			&::-webkit-slider-thumb {
 				width: .8rem;
 				height: .8rem;
-				background: #333;
+				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
 				cursor: pointer;
@@ -136,16 +136,16 @@ export default {
 				position: relative;
 				width: 100%;
 				height: .4rem;
-				border: 1px solid #666;
+				border: 1px solid $primary-light;
 				border-radius: .23rem;
-				background-color: #666;
+				background-color: $primary-light;
 			}
 
 			//IE
 			&::-ms-fill-lower {
 				width: 100%;
 				height: 100%;
-				background-color: #666;
+				background-color: $primary-light;
 			}
 
 			&::-ms-fill-upper {
@@ -157,7 +157,7 @@ export default {
 			&::-ms-thumb {
 				width: .8rem;
 				height: .8rem;
-				background: #333;
+				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
 				cursor: pointer;
@@ -169,9 +169,9 @@ export default {
 				position: relative;
 				width: 100%;
 				height: .4rem;
-				border: 1px solid #666;
+				border: 1px solid $primary-light;
 				border-radius: .23rem;
-				background-color: #666;
+				background-color: $primary-light;
 			}
 		}
 	}

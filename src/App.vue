@@ -15,39 +15,37 @@ export default {
 }
 </script>
 
-<style>
-body {
-  margin: 0;
-}
+<style lang="scss">
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: $primary-color;
+  font-size: 1.6rem;
 }
 
 main {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 
 header {
   margin: 0;
   height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
+  padding: 0 1.5rem 0 2rem;
+  background-color: $primary-color;
   color: #ffffff;
 }
 
 header span {
   display: block;
   position: relative;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 1;
   letter-spacing: .02em;
   font-weight: 400;
   box-sizing: border-box;
-  padding-top: 16px;
+  padding-top: 1.5rem;
 }
 </style>

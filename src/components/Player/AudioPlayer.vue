@@ -12,14 +12,15 @@
 				<pause-icon></pause-icon>
 			</span>
 		</div>
-	
-		<seekbar 
-			:duration="duration" 
-			:currentTime="currentTime" 
-			@seeking="pause"
-			@sought="moveToTime">	
-		</seekbar>
-
+		
+		<div class="player__seekbar">
+			<seekbar 
+				:duration="duration" 
+				:currentTime="currentTime" 
+				@seeking="pause"
+				@sought="moveToTime">	
+			</seekbar>
+		</div>
 
 		<volume @change="onVolumeChange"></volume>
 
@@ -136,19 +137,15 @@ export default {
 .player {
 	max-width: 500px;
 	margin: 0 auto;
+
+	audio {
+		display: none;
+	}
+
+	&__seekbar {
+		margin-bottom: 1.5rem;
+	}
 }
 
-.player__duration-current {
-	display: block;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	top: 0;
-	left: 0;
-	background: #333;
-	border-radius: 50%;
-	transform: translateY(-50%);
-	transition: left 1s ease;
-}
 
 </style>

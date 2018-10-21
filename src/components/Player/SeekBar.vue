@@ -68,6 +68,7 @@ export default {
 
 .seek-bar {
 	display: flex;
+	align-items: center;
 
 	&__input {
 		&[type=range] {
@@ -79,7 +80,7 @@ export default {
 				outline: none;
 
 				&::-webkit-slider-runnable-track {
-					background: #333;
+					background: $primary-color;
 				}
 			}
 
@@ -87,14 +88,14 @@ export default {
 			&::-moz-range-track {
 				width: 100%;
 				height: 1px;
-				background-color: #333;
+				background-color: $primary-color;
 			}
 			
 			//bolinha de busca
 			&::-moz-range-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
+				width: 1.5rem;
+				height: 1.5rem;
+				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
 				cursor: pointer;
@@ -102,9 +103,9 @@ export default {
 
 			//Chrome
 			&::-webkit-slider-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
+				width: 1.5rem;
+				height: 1.5rem;
+				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
 				cursor: pointer;
@@ -118,26 +119,26 @@ export default {
 				position: relative;
 				width: 100%;
 				height: 1px;
-				background-color: #333;
+				background-color: $primary-color;
 			}
 
 			//IE
 			&::-ms-fill-lower {
 				width: 100%;
 				height: 1px;
-				background-color: #333;
+				background-color: $primary-color;
 			}
 
 			&::-ms-fill-upper {
 				width: 100%;
 				height: 1px;
-				background-color: #333;
+				background-color: $primary-color;
 			}
 
 			&::-ms-thumb {
-				width: 20px;
-				height: 20px;
-				background: #333;
+				width: 1.5rem;
+				height: 1.5rem;
+				background: $primary-color;
 				border-radius: 50%;
 				cursor: pointer;
 			}
@@ -148,7 +149,7 @@ export default {
 				position: relative;
 				width: 100%;
 				height: 1px;
-				background-color: #333;
+				background-color: $primary-color;
 			}
 		}
 	}
