@@ -135,9 +135,15 @@ export default {
 }
 
 .player {
-	max-width: 500px;
+	max-width: 30rem;
+	height: 40rem;
+
 	margin: 0 auto;
 
+	padding: 2rem;
+	box-shadow: 1px 2px 4px 1px $primary-light;
+	border-radius: $border-radius;
+	
 	audio {
 		display: none;
 	}

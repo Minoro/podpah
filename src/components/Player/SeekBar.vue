@@ -93,8 +93,8 @@ export default {
 			
 			//bolinha de busca
 			&::-moz-range-thumb {
-				width: 1.5rem;
-				height: 1.5rem;
+				width: 1.2rem;
+				height: 1.2rem;
 				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
@@ -103,8 +103,8 @@ export default {
 
 			//Chrome
 			&::-webkit-slider-thumb {
-				width: 1.5rem;
-				height: 1.5rem;
+				width: 1.2rem;
+				height: 1.2rem;
 				background: $primary-color;
 				border-radius: 50%;
 				border-color: transparent;
@@ -136,8 +136,8 @@ export default {
 			}
 
 			&::-ms-thumb {
-				width: 1.5rem;
-				height: 1.5rem;
+				width: 1.2rem;
+				height: 1.2rem;
 				background: $primary-color;
 				border-radius: 50%;
 				cursor: pointer;

@@ -93,7 +93,7 @@ export default {
 				width: 100%;
 				height: .4rem;
 				border: 1px solid $primary-light;
-				border-radius: .23rem;
+				border-radius: $border-radius;
 				background-color: $primary-light;
 			}
 			
@@ -137,7 +137,7 @@ export default {
 				width: 100%;
 				height: .4rem;
 				border: 1px solid $primary-light;
-				border-radius: .23rem;
+				border-radius: $border-radius;
 				background-color: $primary-light;
 			}
 
@@ -170,7 +170,7 @@ export default {
 				width: 100%;
 				height: .4rem;
 				border: 1px solid $primary-light;
-				border-radius: .23rem;
+				border-radius: $border-radius;
 				background-color: $primary-light;
 			}
 		}

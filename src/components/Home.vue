@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="Home">
     <h1>{{ msg }}</h1>
     <audio-player></audio-player>
   </div>
@@ -8,13 +8,13 @@
 <script>
 import AudioPlayer from './Player/AudioPlayer.vue';
 export default {
-  name: 'hello',
+  name: 'home',
   components:{
     'audio-player': AudioPlayer,
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js PWA',
+      msg: '',
     }
   },
   mounted(){
